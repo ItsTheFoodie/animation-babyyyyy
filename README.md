@@ -1,1 +1,5 @@
 # animation-babyyyyy
+
+# HOMEWORK 8/24
+
+- GET TO 7:46 SEONDS ON CODING TRAIN ANIMATION VIDEO
