@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="sprite.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.min.js"></script>
 </head>
 <body>
@@ -11,7 +12,7 @@
 let spritesheet;
 let spritedata;
 let animation = [];
-
+let horse;
 function preload(){
     spritedata = loadJSON('horse.json')
     spritesheet = loadImage('horse.png')
@@ -19,18 +20,22 @@ function preload(){
 }
 
 function setup(){
-    createCanvas(900,900)
-    let frames = spritedata.frames;
-    for (let i = 0; i < frames.length; i++) {
-        let pos = frames[i].position;
-        let img = spritesheet.get(pos.x, pos.y, pos.w, pos.h);
-        animation.push(img);
-     }
+createCanvas(900,900)
+let frames = spritedata.frames;
+console.log(frames.length)
+for (let i = 0; i < frames.length; i++) {
+    let pos = frames[i].position;
+    let img = spritesheet.get(pos.x, pos.y, pos.w, pos.h);
+ animation.push(img)
+ console.log(animation)
+ }
+ horse = new Sprite(animation,1)
 }
 
 function draw(){
-    background(0);
-    image(animation[0],0,0)
+background(0);
+horse.show()
+horse.animate()
 }
     
 </script>
